@@ -1,6 +1,6 @@
 package com.nextbasecrm.tests.US7_Nattaya;
 
-import com.nextbasecrm.utilities.WebDriverFactory;
+import com.nextbasecrm.tests.US5_Cristina.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

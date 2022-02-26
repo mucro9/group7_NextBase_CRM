@@ -1,4 +1,4 @@
-package com.nextbasecrm.utilities;
+package com.nextbasecrm.tests.US5_Cristina.utilities;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import java.util.Set;
