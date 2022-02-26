@@ -1,10 +1,8 @@
 package com.nextbasecrm.tests.US13_Koray;
-
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.util.concurrent.TimeUnit;
 
 public class Test1 {
