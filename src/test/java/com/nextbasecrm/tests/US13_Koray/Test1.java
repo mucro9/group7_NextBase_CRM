@@ -15,6 +15,7 @@ public class Test1 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://google.com");
+        //
     }
     @Test
     public void test3(){
