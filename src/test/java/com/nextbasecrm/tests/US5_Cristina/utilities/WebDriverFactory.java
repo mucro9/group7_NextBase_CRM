@@ -1,4 +1,4 @@
-package com.nextbasecrm.utilities;
+package com.nextbasecrm.tests.US5_Cristina.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

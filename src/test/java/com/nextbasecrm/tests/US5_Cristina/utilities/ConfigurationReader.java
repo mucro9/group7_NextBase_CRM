@@ -1,4 +1,4 @@
-package com.nextbasecrm.utilities;
+package com.nextbasecrm.tests.US5_Cristina.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
