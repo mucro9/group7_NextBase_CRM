@@ -1,6 +1,6 @@
 package com.nextbasecrm.tests.US1_2_Mucahit;
-import com.nextbasecrm.tests.US5_Cristina.utilities.ConfigurationReader;
-import com.nextbasecrm.tests.US5_Cristina.utilities.WebDriverFactory;
+import com.nextbasecrm.utilities.ConfigurationReader;
+import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
