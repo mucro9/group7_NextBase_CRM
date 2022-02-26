@@ -28,6 +28,7 @@ public class US1_login_function_test {
     }
 
     @DataProvider(name = "UserNames")
+
     public Object[][] provideData() {
          return new Object[][]{
                  {ConfigurationReader.getProperty("usernameHelp1")},
@@ -41,8 +42,6 @@ public class US1_login_function_test {
                  {ConfigurationReader.getProperty("usernameMark3")}
          };
     }
-
-
     @AfterMethod
     public void tearDown(){
         driver.close();
@@ -66,8 +65,9 @@ public class US1_login_function_test {
         WebElement loginButton = driver.findElement(By.xpath("//input[@value = 'Log In']"));
         loginButton.click();
 
-        assertTrue(driver.findElement(By.xpath("(//span[@class= 'menu-item-link-text'])[1]")).isDisplayed());
+        assertEquals(driver.getTitle(),"Portal");
     }
+
 
     @Test
     public void loginWithInvalid_Credentials(){
@@ -86,5 +86,9 @@ public class US1_login_function_test {
         assertEquals(actualText,expectedText,"Invalid login text failed");
 
 
+
+
     }
+
+
 }
