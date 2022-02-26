@@ -54,7 +54,6 @@ public class US1_login_function_test {
         assertEquals(driver.getTitle(),ConfigurationReader.getProperty("expectedNextBaseTitle"));//Authorization
     }
 
-
     @Test(dataProvider = "UserNames")
     public void loginWithValidCredentials_successfully_test(String username){
         driver.get(ConfigurationReader.getProperty("env1"));
@@ -68,6 +67,24 @@ public class US1_login_function_test {
         loginButton.click();
 
         assertTrue(driver.findElement(By.xpath("(//span[@class= 'menu-item-link-text'])[1]")).isDisplayed());
+    }
+
+    @Test
+    public void loginWithInvalid_Credentials(){
+        driver.get(ConfigurationReader.getProperty("env1"));
+        WebElement userName = driver.findElement(By.xpath("//input[@name = 'USER_LOGIN']"));
+        userName.sendKeys("incorrect");
+
+        WebElement password =driver.findElement(By.xpath("//input[@name ='USER_PASSWORD']"));
+        password.sendKeys("incorrect");
+
+        WebElement loginButton = driver.findElement(By.xpath("//input[@value = 'Log In']"));
+        loginButton.click();
+
+        String actualText = driver.findElement(By.xpath("//div[@class='errortext']")).getText();
+        String expectedText = "Incorrect username or password";
+        assertEquals(actualText,expectedText,"Invalid login text failed");
+
 
     }
 }
