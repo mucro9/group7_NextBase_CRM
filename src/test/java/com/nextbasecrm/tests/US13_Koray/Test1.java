@@ -18,5 +18,8 @@ public class Test1 {
     @Test
     public void test3(){
         System.out.println("hello");
+
+        System.out.println("Step practicing ");
     }
+
 }
