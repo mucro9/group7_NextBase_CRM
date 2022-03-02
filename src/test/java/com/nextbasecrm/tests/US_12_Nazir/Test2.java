@@ -1,10 +1,8 @@
 package com.nextbasecrm.tests.US_12_Nazir;
 
-import com.nextbasecrm.utilities.BrowserUtils;
 import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.ConfigurationReader;
 import com.nextbasecrm.utilities.WebDriverFactory;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Test1 {
+public class Test2 {
 
     WebDriver driver;
 
@@ -56,7 +54,7 @@ public class Test1 {
 
 
         WebElement msgEditor = driver.findElement(By.xpath("//body[@contenteditable='true']"));
-        msgEditor.sendKeys("Cybertek");
+        msgEditor.sendKeys("");
         Thread.sleep(3000);
 
         driver.switchTo().defaultContent();
@@ -66,7 +64,8 @@ public class Test1 {
         sendBtn.click();
         Thread.sleep(3000);
 
-
+        WebElement messageNotSpecified=driver.findElement(By.xpath("//span[@class='feed-add-info-text']"));
+        Thread.sleep(3000);
 
 
 
@@ -92,3 +91,4 @@ public class Test1 {
 
 
 }
+
