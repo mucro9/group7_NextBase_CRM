@@ -23,7 +23,7 @@ public class US9_accessing_correct_modules {
        driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-       driver.get(ConfigurationReader.getProperty("env2"));
+       driver.get(ConfigurationReader.getProperty("env1"));
 
        //1-User on the homepage
         CRM_Utilities.crm_login(driver, ConfigurationReader.getProperty("usernameHelp1"), ConfigurationReader.getProperty("password"));
