@@ -11,6 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -43,47 +44,10 @@ import java.util.concurrent.TimeUnit;
             WebElement moreTabButton = driver.findElement(By.xpath("//span[@id='feed-add-post-form-link-text']"));
             // Click on More tab
             moreTabButton.click();
-
-            //Locate File option
-            WebElement fileOption= driver.findElement(By.xpath("//span[@class='menu-popup-item menu-popup-no-icon feed-add-post-form-file feed-add-post-form-file-more ']"));
-            //verify  if File option is displayed
-            fileOption.isDisplayed();
-
-            //Locate and verify Appreciation option is displayed
-            WebElement appreciationOption= driver.findElement(By.xpath("//span[text()='Appreciation']"));
-            appreciationOption.isDisplayed();
-            // Locate and verify Announcement option is displayed
-            WebElement announcementOption= driver.findElement(By.xpath("//span[text()='Announcement']"));
-            announcementOption.isDisplayed();
-
-            //Locate and verify Workflow option is displayed
-            WebElement workflowOption= driver.findElement(By.xpath("//span[text()='Workflow']"));
-            workflowOption.isDisplayed();
-            // Assert File option text is as expected
-            String  expectedFileOption="File";
-            String actualFileOption=fileOption.getText();
-
-            Assert.assertEquals(actualFileOption, expectedFileOption);
-            // Assert Appreciation  option text is as expected
-            String expectedAppreciationOption= "Appreciation";
-            String actualAppreciationOption=appreciationOption.getText();
-
-            Assert.assertEquals(actualAppreciationOption,expectedAppreciationOption);
-
-
-            // Assert Announcement option text is as expected
-            String expectedAnnouncementOption="Announcement";
-            String actualAnnouncementOption=announcementOption.getText();
-
-            Assert.assertEquals(actualAnnouncementOption,expectedAnnouncementOption);
-
-
-            // Assert Workflow option text is as expected
-            String expectedWorkflowOption="Workflow";
-            String actualWorkflowOption=  workflowOption.getText();
-
-            Assert.assertEquals(actualWorkflowOption,expectedWorkflowOption);
-
+            List<WebElement> AllOptions = driver.findElements(By.xpath("//div[@class='menu-popup-items']"));
+            for (WebElement eachOption : AllOptions) {
+                Assert.assertTrue(eachOption.isDisplayed());
+            }
         }
 
         @AfterMethod
